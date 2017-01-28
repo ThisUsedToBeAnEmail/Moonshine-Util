@@ -13,69 +13,11 @@ moon_test_one(
 );
 
 moon_test_one(
-    test => 'scalar',
-    meth => \&Moonshine::Util::right_trim_ws,
-    args => [
-        '     basic test     ',
-    ],
+    meth      => \&Moonshine::Util::join_class, 
+    args      => [ 'component-', 'first' ],
     args_list => 1,
-    expected => '     basic test',
+    expected  => 'component-first',
+    test      => 'scalar',
 );
 
-moon_test_one(
-    test => 'scalar',
-    meth => \&Moonshine::Util::trim_ws,
-    args => [
-        '     basic test     ',
-    ],
-    args_list => 1,
-    expected => 'basic test',
-);
-
-moon_test_one(
-    test => 'scalar',
-    meth => \&Moonshine::Util::trim_ws_lines,
-    args => [
-        '     
-            basic test     
-            multi lines
-        ',
-    ],
-    args_list => 1,
-    expected => '
-basic test
-multi lines
-',
-);
-
-moon_test_one(
-    test => 'scalar',
-    meth => \&Moonshine::Util::trim_blank_ws_lines,
-    args => [
-        '     
-            basic test     
-                    
-                     
-            multi lines
-        ',
-    ],
-    args_list => 1,
-    expected => '
-        basic test
-        multi lines
-',
-);
-
-moon_test_one(
-    test => 'scalar',
-    meth => \&Moonshine::Util::ellipsis,
-    args => [
-        'basic test',
-        8,
-        '***',
-    ],
-    args_list => 1,
-    expected => 'basic***',
-);
-
-sunrise(6);
+sunrise(2);

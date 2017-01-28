@@ -27,33 +27,66 @@ our $VERSION = '0.01';
 
 =cut
 
+=head2 left_trim_ws
+
+=cut
+
 sub left_trim_ws {
     return String::Trim::More::ltrim(@_);
 }
+
+=head2 right_trim_ws
+
+=cut
 
 sub right_trim_ws {
     return String::Trim::More::rtrim(@_);
 }
 
+=head2 trim_ws
+
+=cut
+
 sub trim_ws {
     return String::Trim::More::trim(@_);
 }
+
+=head2 trim_ws_lines
+
+=cut
 
 sub trim_ws_lines {
     return String::Trim::More::trim_lines(@_);
 }
 
+=head2 trim_blank_ws_lines
+
+=cut
+
 sub trim_blank_ws_lines {
     return String::Trim::More::trim_blank_lines(@_);
 }
+
+=head2 ellipsis
+
+=cut
 
 sub ellipsis {
     return String::Trim::More::ellipsis(@_);
 }
 
+=head2 join_class
+
+=cut
+
+sub join_class {
+    defined $_[0] && defined $_[1] and return sprintf '%s%s', $_[0], $_[1];
+    return undef;
+}
+
 =head1 AUTHOR
 
-Robert Acock, C<< <thisusedtobeanemail at gmail.com> >>
+LNATION, C<< <thisusedtobeanemail at gmail.com> >>
 
 =head1 BUGS
 
