@@ -21,7 +21,7 @@ our @EXPORT_OK = qw(
 
 =head1 NAME
 
-Moonshine::Util
+Moonshine::Util - Utils
 
 =head1 VERSION
 
