@@ -75,6 +75,22 @@ sub ellipsis {
     return String::Trim::More::ellipsis(@_);
 }
 
+=head2 prepend_str
+
+=cut
+
+sub prepend_str {
+    return defined $_[1] ? sprintf '%s %s', $_[1], $_[0] : $_[0];
+}
+
+=head2 append_str
+
+=cut
+
+sub append_str {
+    return defined $_[1] ? sprintf '%s %s', $_[0], $_[1] : $_[0];
+}
+
 =head2 join_class
 
 =cut
