@@ -2,6 +2,7 @@ use 5.006;
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
+use Module::Metadata;
 
 WriteMakefile(
     NAME             => 'Moonshine::Util',
@@ -16,11 +17,28 @@ WriteMakefile(
     },
     BUILD_REQUIRES => {
         'Test::More' => 0,
+        'Moonshine::Test' => 0,
+        'Module::Metadata' => 0,
     },
     PREREQ_PM => {
-        #'ABC'              => 1.6,
-        #'Foo::Bar::Module' => 5.0401,
+        'strict' => 0,
+        'warnings' => 0,
+        'String::Trim::More' => 0,
+        'Export' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Moonshine-Util-*' },
+	META_MERGE => {
+        'meta-spec' => { version => 2 },
+        resources => {
+            repository => {
+                type => 'git',
+                url  => 'https://github.com/ThisUsedToBeAnEmail/Moonshine-Util.git',
+                web  => 'https://github.com/ThisUsedToBeAnEmail/Moonshine-Util',
+            },
+        },
+    },
+    META_ADD => {
+        provides => Module::Metadata->provides(version => '2', dir => 'lib'),
+	},
 );

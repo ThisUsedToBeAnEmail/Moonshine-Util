@@ -1,10 +1,23 @@
 package Moonshine::Util;
 
-use 5.006;
 use strict;
 use warnings;
 
 use String::Trim::More;
+
+use Exporter;
+our @ISA = qw/Exporter/;
+our @EXPORT_OK = qw(
+    left_trim_ws
+    right_trim_ws
+    trim_ws
+    trim_ws_lines
+    trim_blank_ws_lines
+    ellipsis
+    prepend_str
+    append_str
+    join_class
+);
 
 =head1 NAME
 
@@ -18,10 +31,11 @@ Version 0.01
 
 our $VERSION = '0.01';
 
-
 =head1 SYNOPSIS
 
 =head1 EXPORT
+
+    use Moonshine::Util qw/join_class/
 
 =head1 SUBROUTINES/METHODS
 
@@ -109,9 +123,6 @@ LNATION, C<< <thisusedtobeanemail at gmail.com> >>
 Please report any bugs or feature requests to C<bug-moonshine-util at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Moonshine-Util>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-
-
 
 =head1 SUPPORT
 
