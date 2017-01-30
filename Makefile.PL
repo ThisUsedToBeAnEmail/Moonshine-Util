@@ -18,13 +18,13 @@ WriteMakefile(
     BUILD_REQUIRES => {
         'Test::More' => 0,
         'Moonshine::Test' => 0,
-        'Module::Metadata' => 0,
     },
     PREREQ_PM => {
         'strict' => 0,
         'warnings' => 0,
-        'String::Trim::More' => 0,
+        'String::Trim::More' => 0.03,
         'Export' => 0,
+        'String::Elide::Parts' => 0.07, 
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Moonshine-Util-*' },

@@ -8,6 +8,7 @@ t/100-trim_ws.t
 t/110-join_class.t  
 t/120-append_str.t  
 t/130-prepend_str.t
+t/140-elide.t
 t/manifest.t
 t/pod-coverage.t
 t/pod.t

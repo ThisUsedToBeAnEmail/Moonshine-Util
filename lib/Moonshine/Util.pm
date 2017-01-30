@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use String::Trim::More;
+use String::Elide::Parts qw/elide/;
 
 use Exporter;
 our @ISA = qw/Exporter/;
@@ -17,6 +18,7 @@ our @EXPORT_OK = qw(
     prepend_str
     append_str
     join_class
+    elide
 );
 
 =head1 NAME
@@ -42,6 +44,8 @@ our $VERSION = '0.01';
 =cut
 
 =head2 left_trim_ws
+    
+    left_trim_ws($string)
 
 =cut
 
@@ -51,6 +55,8 @@ sub left_trim_ws {
 
 =head2 right_trim_ws
 
+    right_trim_ws($string)
+
 =cut
 
 sub right_trim_ws {
@@ -58,6 +64,8 @@ sub right_trim_ws {
 }
 
 =head2 trim_ws
+
+    trim_ws($string)
 
 =cut
 
@@ -67,6 +75,8 @@ sub trim_ws {
 
 =head2 trim_ws_lines
 
+    trim_ws_line($multi_line_str);
+
 =cut
 
 sub trim_ws_lines {
@@ -74,6 +84,8 @@ sub trim_ws_lines {
 }
 
 =head2 trim_blank_ws_lines
+
+    trim_ws_line($multi_line_str);
 
 =cut
 
@@ -83,6 +95,8 @@ sub trim_blank_ws_lines {
 
 =head2 ellipsis
 
+    ellipsis($str);
+
 =cut
 
 sub ellipsis {
@@ -90,6 +104,8 @@ sub ellipsis {
 }
 
 =head2 prepend_str
+
+    prepend_str($str_exists, $str_might_not);
 
 =cut
 
@@ -99,6 +115,8 @@ sub prepend_str {
 
 =head2 append_str
 
+    append_str($str_exists, $str_might_not);
+
 =cut
 
 sub append_str {
@@ -107,12 +125,20 @@ sub append_str {
 
 =head2 join_class
 
+    join_class($class_exists, $class_might_not);
+
 =cut
 
 sub join_class {
     defined $_[0] && defined $_[1] and return sprintf '%s%s', $_[0], $_[1];
     return undef;
 }
+
+=head2 elide
+    
+    elide($text, 16, { truncate => 'left', marker => '...' })
+
+=cut
 
 =head1 AUTHOR
 
