@@ -33,7 +33,7 @@ our $VERSION = '0.03';
 
 =head1 EXPORT
 
-    use Moonshine::Util qw/join_class/
+    use Moonshine::Util "trim_blank_ws_lines" => { -as => "tbwl" };
 
 =head1 SUBROUTINES/METHODS
 

@@ -1,36 +1,58 @@
 # NAME
 
-Moonshine::Util
+Moonshine::Util - Utils
 
 # VERSION
 
-Version 0.01
+Version 0.03
 
 # SYNOPSIS
 
 # EXPORT
 
-    use Moonshine::Util qw/join_class/
+    use Moonshine::Util "trim_blank_ws_lines" => { -as => "tbwl" };
 
 # SUBROUTINES/METHODS
 
 ## left\_trim\_ws
 
+    left_trim_ws($string)
+
 ## right\_trim\_ws
+
+    right_trim_ws($string)
 
 ## trim\_ws
 
+    trim_ws($string)
+
 ## trim\_ws\_lines
+
+    trim_ws_line($multi_line_str);
 
 ## trim\_blank\_ws\_lines
 
+    trim_ws_line($multi_line_str);
+
 ## ellipsis
+
+    ellipsis($str);
 
 ## prepend\_str
 
+    prepend_str($str_exists, $str_might_not);
+
 ## append\_str
 
+    append_str($str_exists, $str_might_not);
+
 ## join\_class
+
+    join_class($class_exists, $class_might_not);
+
+## elide
+
+    elide($text, 16, { truncate => 'left', marker => '...' })
 
 # AUTHOR
 
