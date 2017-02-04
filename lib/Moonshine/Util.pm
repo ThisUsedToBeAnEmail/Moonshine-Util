@@ -5,22 +5,16 @@ use warnings;
 
 use String::Trim::More;
 use String::Elide::Parts qw/elide/;
+use Exporter::Shiny; 
 
-use Exporter::Shiny;
+our @EXPORT = (qw/prepend_str append_str join_class/);
 
-our @EXPORT = qw(prepend_str append_str join_class);
+our @EXPORT_OK = (qw/left_trim_ws right_trim_ws trim_ws trim_ws_lines trim_blank_ws_lines ellipsis
+elide append_str prepend_str join_class/); 
 
-our @EXPORT_OK = qw(
-    left_trim_ws
-    right_trim_ws
-    trim_ws
-    trim_ws_lines
-    trim_blank_ws_lines
-    ellipsis
-    elide
-    append_str
-    prepend_str
-    join_class
+our %EXPORT_TAGS = (
+    base => \@EXPORT,
+    all  => \@EXPORT_OK,
 );
 
 =head1 NAME
@@ -29,11 +23,11 @@ Moonshine::Util - Utils
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
