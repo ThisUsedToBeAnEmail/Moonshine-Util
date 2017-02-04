@@ -6,8 +6,10 @@ use warnings;
 use String::Trim::More;
 use String::Elide::Parts qw/elide/;
 
-use Exporter;
-our @ISA = qw/Exporter/;
+use Exporter::Shiny;
+
+our @EXPORT = qw(prepend_str append_str join_class);
+
 our @EXPORT_OK = qw(
     left_trim_ws
     right_trim_ws
@@ -15,10 +17,10 @@ our @EXPORT_OK = qw(
     trim_ws_lines
     trim_blank_ws_lines
     ellipsis
-    prepend_str
-    append_str
-    join_class
     elide
+    append_str
+    prepend_str
+    join_class
 );
 
 =head1 NAME
