@@ -4,13 +4,14 @@ use strict;
 use warnings;
 
 use String::Trim::More;
-use String::Elide::Parts qw/elide/;
+use String::Elide::Parts 'elide';
 use Exporter::Shiny; 
+use HTML::Valid::Tagset ':all';
 
 our @EXPORT = (qw/prepend_str append_str join_class/);
 
 our @EXPORT_OK = (qw/left_trim_ws right_trim_ws trim_ws trim_ws_lines trim_blank_ws_lines ellipsis
-elide append_str prepend_str join_class/); 
+elide append_str prepend_str join_class assert_valid_html5_tag/); 
 
 our %EXPORT_TAGS = (
     base => \@EXPORT,
@@ -37,7 +38,15 @@ our $VERSION = '0.03';
 
 =head1 SUBROUTINES/METHODS
 
+=head2 assert_valid_html5_tag
+
+    assert_valid_html5_tag('span');
+
 =cut
+
+sub assert_valid_html5_tag {
+    return $isHTML5{$_[0]} ? 1 : 0;
+}
 
 =head2 left_trim_ws
     
