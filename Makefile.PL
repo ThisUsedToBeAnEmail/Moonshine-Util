@@ -23,7 +23,6 @@ WriteMakefile(
         'strict' => 0,
         'warnings' => 0,
         'String::Trim::More' => 0.03,
-        'Export' => 0,
         'String::Elide::Parts' => 0.07, 
         'Exporter::Tiny' => 0.044,
     },
