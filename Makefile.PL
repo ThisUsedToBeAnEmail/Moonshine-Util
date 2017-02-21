@@ -25,6 +25,7 @@ WriteMakefile(
         'String::Trim::More' => 0.03,
         'String::Elide::Parts' => 0.07, 
         'Exporter::Tiny' => 0.044,
+        'HTML::Valid' => 0.05,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Moonshine-Util-*' },

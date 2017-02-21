@@ -11,7 +11,7 @@ use HTML::Valid::Tagset ':all';
 our @EXPORT = (qw/prepend_str append_str join_class/);
 
 our @EXPORT_OK = (qw/left_trim_ws right_trim_ws trim_ws trim_ws_lines trim_blank_ws_lines ellipsis
-elide append_str prepend_str join_class assert_valid_html5_tag/); 
+elide append_str prepend_str join_class assert_valid_html5_tag valid_attributes_for_tag/); 
 
 our %EXPORT_TAGS = (
     base => \@EXPORT,
@@ -24,11 +24,11 @@ Moonshine::Util - Utils
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 =head1 SYNOPSIS
 
@@ -46,6 +46,19 @@ our $VERSION = '0.05';
 
 sub assert_valid_html5_tag {
     return $isHTML5{$_[0]} ? 1 : 0;
+}
+
+=head2 valid_attributes_for_tag 
+    
+    valid_attributes_for_tag('a');
+    valid_attributes_for_tag('a', standard => 'html5')
+    
+Returns an array reference containing all valid attributes for the specified html tag.
+
+=cut
+
+sub valid_attributes_for_tag {
+    return attributes(@_);
 }
 
 =head2 left_trim_ws
@@ -184,9 +197,7 @@ L<http://search.cpan.org/dist/Moonshine-Util/>
 
 =back
 
-
 =head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 
@@ -227,7 +238,6 @@ YOUR LOCAL LAW. UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR
 CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR
 CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 
 =cut
 
