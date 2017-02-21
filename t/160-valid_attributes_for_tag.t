@@ -266,6 +266,6 @@ moon_test_one(
         ],
 );
 
-sunrise(2, '*\o/*');
+sunrise(2, '(ツ)');
 
 1;
